@@ -24,8 +24,8 @@ export default function Header() {
                         <Link 
                             href={'/#'}
                             data-active={isActive("/#")}
-                            className="
-                                opacity-80 hover:opacity-100 cursor-pointer
+                            className="hidden
+                                hover:opacity-100
                                 data-[active=true]:text-lime-400
                                 data-[active=true]:opacity-100
                         ">
