@@ -1,12 +1,14 @@
 import Image from "next/image"
+import { CardProps } from "@/components/Card"
 
 type ModalProps = {
     open: boolean
+    data: CardProps | null;
     onClose: () => void
 }
 
-const Modal = ({ open, onClose }: ModalProps) => {
-    if (!open) return null
+const Modal = ({ open, data, onClose }: ModalProps) => {
+    if (!open || !data) return null;
 
     return(
         <>
@@ -31,15 +33,15 @@ const Modal = ({ open, onClose }: ModalProps) => {
                             <div className="w-12 h-12 rounded-xl bg-neutral-200">
                                 <Image
                                     className='w-12 h-12 rounded-xl'
-                                    src="/noname.webp"
+                                    src={data.logo} 
                                     alt="Logo"
                                     width={48}
                                     height={48}
                                 />
                             </div>
                             <div className="flex flex-col">
-                                <h3 className="font-bold text-lg leading-tight">Cointiply</h3>
-                                <p className="text-xs text-neutral-500">PTC & OFFERS</p>
+                                <h3 className="font-bold text-lg leading-tight">{data.name}</h3>
+                                <p className="text-xs text-neutral-500">{data.category}</p>
                             </div>
                         </div>
             
