@@ -54,21 +54,17 @@ const Modal = ({ open, data, onClose }: ModalProps) => {
                             >
                                 <path d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7.1-34z" />
                             </svg>
-                            <span>Claim up to $2 every 5 minutes</span>
+                            <span>{data.highlight}</span>
                         </div>
                         <ul className="text-sm space-y-1">
-                            <li className='flex items-center gap-2'>
-                                <svg aria-hidden="true" className="w-3 h-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                            {data.features.map((feature, i) => (
+                            <li key={i} className='flex items-center gap-2'>
+                                <svg className="w-3 h-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
                                 </svg>
-                                Level up & increase your reward
+                                {feature}
                             </li>
-                            <li className='flex items-center gap-2'>
-                                <svg aria-hidden="true" className="w-3 h-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
-                                </svg>
-                                Level up & increase your reward
-                            </li>
+                            ))}
                         </ul>
                     </div>
 

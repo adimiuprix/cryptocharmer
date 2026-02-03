@@ -140,7 +140,7 @@ export default function Home() {
                 </div>
 
                 {/* CENTER BUTTON */}
-                <div className="w-full flex items-center justify-center py-5 bg-[#f2f2f2]">
+                <div className="w-full flex items-center justify-center py-5">
                     <Link
                         href={''}
                         className="
