@@ -6,8 +6,8 @@ type ApiError = {
 export async function GET(): Promise<Response> {
     try {
         const res = await fetch('https://tascen.site/api/content', {
-            cache: 'force-cache',
-            next: { revalidate: 60 },
+            cache: 'no-cache',
+            // next: { revalidate: 60 },
         })
 
         if (!res.ok) {

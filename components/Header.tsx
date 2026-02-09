@@ -16,7 +16,7 @@ export default function Header() {
                 <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
                     {/* LOGO */}
                     <div className="text-xl font-extrabold tracking-wide">
-                        <Link href={'/'}>SCALEVANCE<span className="text-white">.COM</span></Link>
+                        <Link href={'/'}>CRYPTOCHARMER<span className="text-white">.XYZ</span></Link>
                     </div>
 
                     {/* DESKTOP MENU */}
