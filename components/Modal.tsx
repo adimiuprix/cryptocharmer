@@ -49,7 +49,7 @@ const Modal = ({ open, data, onClose }: ModalProps) => {
 
                         <p className="text-xs font-semibold mb-2">{data.headline}</p>
                         <div
-                            className={`inline-flex items-center gap-1.5 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3 ${highlight === "Scam"
+                            className={`inline-flex items-center gap-1.5 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3 ${data?.highlight === "Scam"
                                 ? "bg-red-400/90"
                                 : "bg-lime-400/90"
                                 }`}
