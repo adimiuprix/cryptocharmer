@@ -74,7 +74,12 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                     </div>
 
                     <p className="text-xs font-semibold mb-2">{headline}</p>
-                    <div className="inline-flex items-center gap-1.5 bg-lime-400/90 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3">
+                    <div
+                        className={`inline-flex items-center gap-1.5 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3 ${highlight === "Scam"
+                            ? "bg-red-400/90"
+                            : "bg-lime-400/90"
+                            }`}
+                    >
                         <svg
                             viewBox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
