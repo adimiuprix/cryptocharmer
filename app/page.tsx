@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {cards
                         .filter(card => ['Mining', 'Hyip'].includes(card.category))
-                        .slice(0, 8)
+                        .slice(0, 100)
                         .map(card => (
                             <Card key={card.id} {...card} />
                         ))}
