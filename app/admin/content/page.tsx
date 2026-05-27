@@ -19,16 +19,16 @@ export default async function ContentManagementPage() {
 
   return (
     <div className="flex flex-col gap-6 h-full animate-in fade-in slide-in-from-bottom-8 duration-700">
-      
+
       {/* Header & Actions */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-neutral-900/40 backdrop-blur-xl p-6 rounded-3xl border border-white/5 shadow-lg">
         <div>
           <h1 className="text-2xl font-bold text-white">Content Management</h1>
           <p className="text-neutral-400 text-sm mt-1">Manage all platforms available on the website.</p>
         </div>
-        
-        <Link 
-          href="/admin/content/new" 
+
+        <Link
+          href="/admin/content/new"
           className="flex items-center gap-2 px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-neutral-950 rounded-xl font-semibold transition-colors shadow-[0_0_20px_-5px_rgba(16,185,129,0.5)]"
         >
           <Plus className="w-5 h-5" />
@@ -39,7 +39,7 @@ export default async function ContentManagementPage() {
       {/* Main Table */}
       <div className="bg-neutral-900/40 backdrop-blur-xl rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden flex-1">
         <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
-        
+
         <div className="overflow-x-auto min-h-[400px]">
           <table className="w-full text-left text-sm text-neutral-300">
             <thead className="text-xs text-neutral-500 uppercase bg-black/20 border-b border-white/5">
@@ -69,7 +69,7 @@ export default async function ContentManagementPage() {
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 rounded-xl bg-neutral-800 flex items-center justify-center overflow-hidden shrink-0 border border-neutral-700/50 group-hover:border-emerald-500/30 transition-colors">
                           {content.logo ? (
-                            <Image 
+                            <Image
                               src={content.logo.startsWith('http') ? content.logo : `https://daenabjkvmvbwcumjllq.supabase.co/storage/v1/object/public/charmer/content-images/${content.logo}`}
                               alt={content.name}
                               width={48} height={48}
@@ -94,13 +94,13 @@ export default async function ContentManagementPage() {
                         </div>
                       </div>
                     </td>
-                    
+
                     <td className="px-6 py-4">
                       <span className="px-3 py-1.5 bg-neutral-950 text-neutral-300 rounded-lg text-xs font-medium border border-neutral-800">
                         {content.category?.name || 'None'}
                       </span>
                     </td>
-                    
+
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2 text-neutral-400">
                         {content.wallet?.provider ? (
@@ -112,7 +112,7 @@ export default async function ContentManagementPage() {
                         )}
                       </div>
                     </td>
-                    
+
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-2">
                         <div className={`w-2 h-2 rounded-full ${content.highlight === 'Paying' ? 'bg-emerald-500 animate-pulse' : 'bg-neutral-500'}`} />
@@ -121,17 +121,17 @@ export default async function ContentManagementPage() {
                         </span>
                       </div>
                     </td>
-                    
+
                     <td className="px-6 py-4 text-right">
-                      <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <Link 
+                      <div className="flex items-center justify-end gap-2">
+                        <Link
                           href={`/admin/content/${content.id}/edit`}
                           className="p-2 bg-neutral-800 hover:bg-emerald-500/20 text-neutral-400 hover:text-emerald-400 rounded-lg transition-colors border border-transparent hover:border-emerald-500/30"
                           title="Edit"
                         >
                           <Edit2 className="w-4 h-4" />
                         </Link>
-                        
+
                         <DeleteButton id={content.id} name={content.name} />
                       </div>
                     </td>
@@ -142,7 +142,7 @@ export default async function ContentManagementPage() {
           </table>
         </div>
       </div>
-      
+
     </div>
   )
 }
