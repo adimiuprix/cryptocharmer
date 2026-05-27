@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id              Int       @id @default(autoincrement())
+  name            String
+  email           String    @unique
+  emailVerifiedAt DateTime?
+  password        String
+  rememberToken   String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("admins")
+}
+
+model Category {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  contents Content[]
+
+  @@map("categories")
+}
+
+model Wallet {
+  id          Int      @id @default(autoincrement())
+  provider    String   @unique
+  isSupported Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  contents Content[]
+
+  @@map("wallets")
+}
+
+model Content {
+  id         Int      @id @default(autoincrement())
+  name       String
+  logo       String?
+  headline   String?
+  categoryId Int
+  badges     Json?
+  highlight  String?
+  features   Json?
+  walletId   Int?
+  link       String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  category   Category          @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  wallet     Wallet?           @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  currencies ContentCurrency[]
+
+  @@map("contents")
+}
+
+model Currency {
+  id        Int      @id @default(autoincrement())
+  code      String   @unique
+  name      String
+  icon      String?
+  network   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  contents ContentCurrency[]
+
+  @@map("currencies")
+}
+
+model ContentCurrency {
+  id         Int      @id @default(autoincrement())
+  contentId  Int
+  currencyId Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  content  Content  @relation(fields: [contentId], references: [id], onDelete: Cascade)
+  currency Currency @relation(fields: [currencyId], references: [id], onDelete: Cascade)
+
+  @@unique([contentId, currencyId])
+  @@map("content_currencies")
+}
