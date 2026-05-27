@@ -198,7 +198,7 @@ export async function uploadLogo(formData: FormData) {
       return { success: false, error: `Gagal mengunggah ke Supabase: ${error.message}` };
     }
 
-    const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://daenabjkvmvbwcumjllq.supabase.co';
+    const SUPABASE_URL = process.env.SUPABASE_URL || 'https://daenabjkvmvbwcumjllq.supabase.co';
     const publicUrl = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET_NAME}/${fileName}`;
 
     return { success: true, url: publicUrl };

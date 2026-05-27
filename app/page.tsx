@@ -45,7 +45,7 @@ export default function Home() {
                 const data = await res.json()
 
 
-                const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL
+                const SUPABASE_URL = process.env.SUPABASE_URL
 
                 const transformed = data.map((item: any) => ({
                     id: item.id,

@@ -1,6 +1,6 @@
 import { AuthClient } from '@supabase/auth-js'
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://daenabjkvmvbwcumjllq.supabase.co'
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://daenabjkvmvbwcumjllq.supabase.co'
 // For auth, we only need anon key for browser, but we can also use service role key for admin tasks
 const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.SUPABASE_SERVICE_ROLE_KEY || ''
 
