@@ -4,6 +4,9 @@ import { NextResponse } from "next/server"
 export async function GET() {
     try {
         const cards = await prisma.content.findMany({
+            orderBy: {
+                id: 'desc'
+            },
             include: {
                 category: true,
                 wallet: true,
