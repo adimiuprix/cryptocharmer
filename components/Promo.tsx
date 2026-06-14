@@ -46,7 +46,7 @@ const Promo = () => {
                                 <span className="text-lime-400"> Free Crypto!</span>
                             </h1>
 
-                            <p className="text-white/70 text-[15px] text-center leading-[1.7] max-w-190 mx-auto lg:mx-0">
+                            <p className="text-white/90 text-[15px] text-center leading-[1.7] max-w-190 mx-auto lg:mx-0">
                                 Explore the best legit ways to earn free crypto and real money today:
                                 claim faucets, watch ads, play games, share traffic and get paid!
                                 Withdraw instantly to best crypto wallets!
