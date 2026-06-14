@@ -73,7 +73,7 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                         </div>
                     </div>
 
-                    <p className="text-xs font-semibold mb-2">{headline}</p>
+                    <p className="text-xs font-semibold mb-2 text-content">{headline}</p>
                     <div
                         className={`inline-flex items-center gap-1.5 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3 ${highlight === "Scam"
                             ? "bg-red-400/90"
@@ -91,7 +91,7 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                     </div>
                     <ul className="text-sm space-y-1">
                         {features?.slice(0, 2).map((feature, i) => (
-                            <li key={i} className='flex items-center gap-2'>
+                            <li key={i} className='flex items-center gap-2 text-content'>
                                 <svg aria-hidden="true" className="w-3 h-3" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"></path>
                                 </svg>
@@ -106,7 +106,7 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                             setModalData({ name, logo, headline, category, badges, highlight, features, link, currencies, wallet });
                             setOpen(true);
                         }}
-                        className="bg-neutral-100 px-5 py-2 rounded-lg text-sm font-medium flex items-center justify-center cursor-pointer"
+                        className="bg-neutral-100 px-5 py-2 rounded-lg text-sm font-medium flex items-center justify-center cursor-pointer text-content"
                     >
                         Details
                     </button>
