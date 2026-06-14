@@ -87,7 +87,7 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                         >
                             <path d="M505 174.8l-39.6-39.6c-9.4-9.4-24.6-9.4-33.9 0L192 374.7 80.6 263.2c-9.4-9.4-24.6-9.4-33.9 0L7 302.9c-9.4 9.4-9.4 24.6 0 34L175 505c9.4 9.4 24.6 9.4 33.9 0l296-296.2c9.4-9.5 9.4-24.7.1-34z" />
                         </svg>
-                        <span>{highlight}</span>
+                        <span className="text-content">{highlight}</span>
                     </div>
                     <ul className="text-sm space-y-1">
                         {features?.slice(0, 2).map((feature, i) => (

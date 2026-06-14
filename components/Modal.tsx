@@ -42,12 +42,12 @@ const Modal = ({ open, data, onClose }: ModalProps) => {
                                 />
                             </div>
                             <div className="flex flex-col">
-                                <h3 className="font-bold text-lg leading-tight">{data.name}</h3>
-                                <p className="text-xs text-neutral-500">{data.category}</p>
+                                <h3 className="font-bold text-lg leading-tight text-content">{data.name}</h3>
+                                <p className="text-xs text-neutral-500 text-content">{data.category}</p>
                             </div>
                         </div>
 
-                        <p className="text-xs font-semibold mb-2">{data.headline}</p>
+                        <p className="text-xs font-semibold mb-2 text-content">{data.headline}</p>
                         <div
                             className={`inline-flex items-center gap-1.5 text-black text-xs font-semibold px-3 py-1.5 rounded-lg mb-3 ${data?.highlight === "Scam"
                                 ? "bg-red-400/90"
