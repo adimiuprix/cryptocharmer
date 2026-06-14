@@ -68,8 +68,8 @@ const Card = ({ name, logo, headline, category, badges, highlight, features, lin
                             />
                         </div>
                         <div className="flex flex-col">
-                            <h3 className="font-bold text-lg leading-tight">{name}</h3>
-                            <p className="text-xs text-neutral-600">{category}</p>
+                            <h3 className="font-bold text-lg leading-tight text-content">{name}</h3>
+                            <p className="text-xs text-neutral-600 text-content">{category}</p>
                         </div>
                     </div>
 
